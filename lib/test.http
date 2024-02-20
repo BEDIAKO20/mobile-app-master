@@ -1,0 +1,28 @@
+
+ POST https://manilla.nsano.com/checkout/payment
+        Content-Type: : application/json
+        Authorization: Bearer 300544125135
+
+ {
+    "order_id": "554326",
+    "amount": 20.0,
+    "currency": "GHS",
+    "items": [
+              {
+              "name": "Mouse",
+              "quantity": 1,
+              "description":"Logitech Pro C34",
+              "amount": 0.5
+              },
+              {
+              "name": "Monitor",
+              "quantity": 1,
+              "description":" HP 4k Monitors",
+              "amount": 0.5
+              }
+       ],
+    "return_url": "http://localhost/store/success/",
+    "cancel_url": "http://localhost/store/cancel/"
+}
+
+

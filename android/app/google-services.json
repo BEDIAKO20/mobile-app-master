@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "213514740077",
+    "firebase_url": "https://franko-trading-app.firebaseio.com",
+    "project_id": "franko-trading-app",
+    "storage_bucket": "franko-trading-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213514740077:android:8bb111d412ad881a",
+        "android_client_info": {
+          "package_name": "com.frakotg.enterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213514740077-4nnpcv2qr2vnc5fmfetcggg96uo1u89r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frakotg.enterapp",
+            "certificate_hash": "40f912df836146c7d34c53d41df6428f09f9aba8"
+          }
+        },
+        {
+          "client_id": "213514740077-e5o9oep92u2rkntcuauic0sdde8q8pvi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJzsJv6HbHULNi79_YuC1CsTDyMQeMfJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213514740077-e5o9oep92u2rkntcuauic0sdde8q8pvi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-4342949130250137~3120956392"
+    }
+  ],
+  "configuration_version": "1"
+}

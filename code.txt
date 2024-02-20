@@ -1,0 +1,99 @@
+ Widget getTextWidgets(List<String> strings)
+  {
+    List<Widget> list = new List<Widget>();
+    for(var i = 0; i < strings.length; i++){
+        list.add(new Text(strings[i]));
+    }
+    return new Row(children: list);
+  }
+..........................................................................................................
+   Widget getTextWidgets(List<String> strings)
+  {
+    return new Row(children: strings.map((item) => new Text(item)).toList());
+  }
+.........................................................................................................
+  class Category {
+  int id;
+  String title;
+
+  Category({
+    this.id,
+    this.title,
+  });
+
+  static Future<List<Category>> getCategories() async {
+    http.Response response = await http.get("JSON API Url");
+
+    List<Category> list = [];
+
+    try {
+      if (response.statusCode == 200) {
+        Map<String, dynamic> map = json.decode(response.body);
+
+        for (var map in map['categories']) {
+          list.add(Category(id: map['id'], title: map['title']));
+        }
+      }
+    } catch (e, _) {
+      debugPrint(e.toString());
+    }
+    return list;
+  }
+}
+
+.......................................................................................................
+import 'package:flutter/material.dart';
+import 'package:munaw3_app/model/category.dart';
+
+class ListNews extends StatefulWidget {
+  ListNews({Key key}) : super(key: key);
+
+  @override
+  _ListNewsState createState() => _ListNewsState();
+}
+
+class _ListNewsState extends State<ListNews> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<Category>>(
+      future: Category.getCategories(),
+      builder: (c, s) {
+        if (s.hasData) {
+          List<Tab> tabs = new List<Tab>();
+
+          for (int i = 0; i < s.data.length; i++) {
+            tabs.add(Tab(
+              child: Text(
+                s.data[i].title,
+                style: TextStyle(color: Colors.white),
+              ),
+            ));
+          }
+          return DefaultTabController(
+            length: s.data.length,
+            child: Scaffold(
+              appBar: AppBar(
+                title: Image.asset('assets/logo.png', fit: BoxFit.cover),
+                backgroundColor: Colors.grey[900],
+                bottom: TabBar(
+                  isScrollable: true,
+                  tabs: tabs,
+                ),
+              ),
+            ),
+          );
+        }
+        if (s.hasError) print(s.error.toString());
+        return Scaffold(
+          body: Center(
+              child: Text(s.hasError ? s.error.toString() : "Loading...")),
+        );
+      },
+    );
+  }
+}

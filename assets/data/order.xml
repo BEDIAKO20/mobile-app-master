@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TKKPG>
+    <Request>
+        <Operation>CreateOrder</Operation>
+        <Language>EN</Language>
+        <Order>
+            <Merchant>TEST_ECOM250</Merchant>
+            <Amount>1234</Amount>
+            <Currency>936</Currency>
+            <Description>Test</Description>
+            <ApproveURL>/testshopPageReturn.jsp</ApproveURL>
+            <CancelURL>/testshopPageReturn.jsp</CancelURL>
+            <DeclineURL>/testshopPageReturn.jsp</DeclineURL>
+            <OrderType>Purchase</OrderType>
+        </Order>
+    </Request>
+</TKKPG>
